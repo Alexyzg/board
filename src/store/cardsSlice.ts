@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import { Card, CardsMap } from 'interfaces'
+
 import { getListOfCards } from 'services/localstorage'
 import { removeProps } from 'utils'
 
@@ -9,7 +10,7 @@ const cardsSlice = createSlice({
   initialState: getListOfCards(),
   reducers: {
     setCards(state: CardsMap, actions: { payload: CardsMap }) {
-      state = actions.payload
+      return actions.payload
     },
     addCard(state: CardsMap, action: { payload: Card; }) {
       const { id, title, description } = action.payload
@@ -17,7 +18,7 @@ const cardsSlice = createSlice({
     },
     deleteCard(state: CardsMap, action: { payload: Card }) {
       const { id } = action.payload
-      removeProps([id], state)
+      state = removeProps<Card>([id], state)
     }
   }
 })

@@ -1,6 +1,6 @@
 import { localStorage } from './localStorage'
 import { JSONparse } from './utils'
-import { Card, CardsMap } from 'interfaces' 
+import { CardsMap } from 'interfaces' 
 
 const CARDS_NAME: string = 'cards' 
 const initialCardsState: CardsMap = {}
