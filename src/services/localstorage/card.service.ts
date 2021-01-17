@@ -1,8 +1,9 @@
-import { localStorage } from './localStorage'
-import { JSONparse } from './utils'
-import { CardsMap } from 'interfaces' 
+import { CardsMap } from 'interfaces'
 
-const CARDS_NAME: string = 'cards' 
+import { JSONparse } from './utils'
+import { localStorage } from './localStorage'
+
+const CARDS_NAME = 'cards' 
 const initialCardsState: CardsMap = {}
 
 export const setCards = (cards: CardsMap): void => {

@@ -1,1 +1,1 @@
-export const localStorage = window.localStorage
+export const { localStorage } = window

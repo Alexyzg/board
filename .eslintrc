@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "airbnb-typescript/base", // eslint-config-airbnb-typescript
+    "plugin:@typescript-eslint/recommended", // @typescript-eslint/eslint-plugin
+    "plugin:eslint-comments/recommended", // eslint-plugin-eslint-comments
+    "plugin:promise/recommended", // eslint-plugin-promise
+    "plugin:jsx-a11y/recommended", // eslint-plugin-jsx-a11y
+    "plugin:react-hooks/recommended", // eslint-plugin-react-hooks
+    "plugin:import/recommended", // eslint-plugin-import
+    "plugin:prettier/recommended", // eslint-plugin-prettier
+    "prettier", // eslint-config-prettier
+    "prettier/@typescript-eslint" // eslint-config-prettier
+  ],
+  "plugins": [
+    "jsx-a11y", //  eslint-plugin-jsx-a11y
+    "import", // eslint-plugin-import
+    "react-hooks", // eslint-plugin-react-hooks
+    "@typescript-eslint", // @typescript-eslint/eslint-plugin
+    "eslint-comments", // eslint-plugin-eslint-comments
+    "promise", // eslint-plugin-promise
+    "prettier" // eslint-plugin-prettier
+  ],
+  // TODO: investigate parserOptions 
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    // Rules for eslint-plugin-import
+    "import/named": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "components",
+          "interfaces",
+          "selectors",
+          "services",
+          "store",
+          "utils"
+        ]
+      }
+    ],
+    // Rules for eslint-config-prettier https://prettier.io/docs/en/options.html
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
+    // eslint rules
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        // we can reassign state in slice (reducers)
+        // example "CardSlice"
+        "ignorePropertyModificationsFor": [
+          "state"
+        ]
+      }
+    ]
+  }
+}

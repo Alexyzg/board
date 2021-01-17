@@ -20,16 +20,17 @@ const useDataSource = () => {
         console.log(cardsMap)
         dispatch(setCards(cardsMap))
         setIsLoaded(true)
+        return
       })
       .catch(error => console.warn('useDataSource', error))
-  },[])
+  }, [dispatch])
   return isLoaded
 }
 
 export const MainPage: React.FC = () => {
   const isLoaded = useDataSource()
-  
-  if(!isLoaded) {
+
+  if (!isLoaded) {
     return <div>Loading...</div>
   }
 

@@ -18,7 +18,7 @@ const cardsSlice = createSlice({
     },
     deleteCard(state: CardsMap, action: { payload: Card }) {
       const { id } = action.payload
-      state = removeProps<Card>([id], state)
+      return removeProps<Card>([id], state)
     }
   }
 })

@@ -3,11 +3,11 @@ import React from 'react'
 import './AddCard.scss'
 
 const justConsoleLog = (e: React.ChangeEvent<HTMLDivElement>) => {
-  console.log(e.target.innerText)
+  const text = e.target.innerText
+  return text
 }
 
 export const AddCard: React.FC = () => {
-
   return (
     <div className="add-card">
       <div className="add-card__input" contentEditable="true" onInput={justConsoleLog}>
