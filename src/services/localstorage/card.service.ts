@@ -15,5 +15,5 @@ export const setCards = (cards: CardsMap): void => {
 
 export const getListOfCards = (): CardsMap => {
   const cardsJONS: string = localStorage.getItem(CARDS_NAME)
-  return JSONparse(cardsJONS) || initialCardsState
+  return JSONparse<CardsMap>(cardsJONS) || initialCardsState
 }

@@ -1,4 +1,4 @@
-export const JSONparse = (str: string): string | undefined => {
+export const JSONparse = <T>(str: string): T | undefined => {
   try {
     return JSON.parse(str)
   } catch (error) {
