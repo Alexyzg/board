@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: 'board-prok.appspot.com',
   messagingSenderId: '632118778164',
   appId: '1:632118778164:web:13864d44e184246493ed61',
-  measurementId: 'G-57P4ZBVJBK'
+  measurementId: 'G-57P4ZBVJBK',
 }
 
 firebase.initializeApp(firebaseConfig)

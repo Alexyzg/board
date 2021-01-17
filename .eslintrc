@@ -45,27 +45,19 @@
     // Rules for eslint-plugin-import
     "import/named": "off",
     "import/prefer-default-export": "off",
-    "import/no-unresolved": [
-      2,
-      {
-        "ignore": [
-          "components",
-          "interfaces",
-          "selectors",
-          "services",
-          "store",
-          "utils"
-        ]
-      }
-    ],
+    "import/no-unresolved": "off", // does not work correctly if the file extension is missing
+    "import/extensions": "off",
     // Rules for eslint-config-prettier https://prettier.io/docs/en/options.html
     "prettier/prettier": [
       "error",
       {
         "singleQuote": true,
-        "semi": false
+        "semi": false,
+        "arrowParens": "avoid"
       }
     ],
+    // Rules for eslint-plugin-promise
+    "promise/always-return": "off",
     // eslint rules
     "no-param-reassign": [
       "error",
@@ -75,6 +67,15 @@
         // example "CardSlice"
         "ignorePropertyModificationsFor": [
           "state"
+        ]
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
         ]
       }
     ]

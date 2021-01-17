@@ -10,7 +10,11 @@ const justConsoleLog = (e: React.ChangeEvent<HTMLDivElement>) => {
 export const AddCard: React.FC = () => {
   return (
     <div className="add-card">
-      <div className="add-card__input" contentEditable="true" onInput={justConsoleLog}>
+      <div
+        className="add-card__input"
+        contentEditable="true"
+        onInput={justConsoleLog}
+      >
         Type in me
       </div>
       <div className="add-card__buttons">

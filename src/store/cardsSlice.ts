@@ -12,15 +12,15 @@ const cardsSlice = createSlice({
     setCards(state: CardsMap, actions: { payload: CardsMap }) {
       return actions.payload
     },
-    addCard(state: CardsMap, action: { payload: Card; }) {
+    addCard(state: CardsMap, action: { payload: Card }) {
       const { id, title, description } = action.payload
-      state[id]  = { title, description, id }
+      state[id] = { title, description, id }
     },
     deleteCard(state: CardsMap, action: { payload: Card }) {
       const { id } = action.payload
       return removeProps<Card>([id], state)
-    }
-  }
+    },
+  },
 })
 
 export const { addCard, deleteCard, setCards } = cardsSlice.actions

@@ -15,12 +15,11 @@ const useDataSource = () => {
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false)
   useEffect(() => {
-    cardsApiService.getCards()
+    cardsApiService
+      .getCards()
       .then(cardsMap => {
-        console.log(cardsMap)
         dispatch(setCards(cardsMap))
         setIsLoaded(true)
-        return
       })
       .catch(error => console.warn('useDataSource', error))
   }, [dispatch])

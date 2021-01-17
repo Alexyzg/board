@@ -6,7 +6,7 @@
     "build": "webpack",
     "start": "webpack serve  --open 'Google Chrome'",
     "eslint": "eslint -- ./src",
-    "eslint-fix": "eslint -- ./src --fix"
+    "eslint-fix": "eslint --fix -- ./src "
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
